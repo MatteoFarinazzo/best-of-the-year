@@ -21,10 +21,10 @@ public class ControllerSong {
 
     @GetMapping("/details")
     public String songDetails(@RequestParam int songId, Model model) {
-        // cerco il player con il nome arrivato come parametro
+
         Song song = getSongById(songId);
         model.addAttribute("song", song);
-        return "song-details";
+        return "details";
     }
 
 
