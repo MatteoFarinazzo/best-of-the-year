@@ -2,15 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Home</title>
 </head>
-<body>
+<body style="padding-top: 150px;">
 
-<h1>Best of the <span th:text="${year}"> </span> by <span th:text="${name}"> </span></h1>
+<h1 style="text-align:center;">Best of the <span th:text="${year}"> </span> by <span th:text="${name}"> </span></h1>
 
-
-<a th:href="@{/song}"> Guarda la lista</a>
-
+<h2 style="text-align:center;"><a th:href="@{/song}"> Guarda la lista</a></h2>
 
 </body>
 </html>

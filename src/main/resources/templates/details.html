@@ -5,14 +5,14 @@
     <title>Song Details</title>
 </head>
 <body>
-<h1>Song Details</h1>
+<h1 style="text-align:center;">Song Details</h1>
 
-<div th:object="${song}">
-    <p th:text="*{title}"></p>
+<div style="text-align:center;" th:object="${song}">
+    <p th:text="|Titolo: *{title}|"></p>
     <p>
-        <span th:text="*{author}"></span>
+       <span th:text="|autore: *{author}|"></span>
     </p>
 </div>
-<a th:href="@{/song}">torna alla lista</a>
+<a style="text-align:center;" th:href="@{/song}">torna alla lista</a>
 </body>
 </html>
