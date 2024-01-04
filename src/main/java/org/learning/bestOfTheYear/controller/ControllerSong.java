@@ -13,19 +13,18 @@ import java.util.List;
 @RequestMapping("/song")
 public class ControllerSong {
 @GetMapping
-    private String ListOfSongs(Model model){
+    public String ListOfSongs(Model model){
         List<Song> songs = getSongs();
         model.addAttribute("songs", songs);
         return "SongList";
     }
 
     @GetMapping("/details")
-    public String songDetails(@RequestParam(name = "title", required = true) String songTitle,
-                                Model model) {
+    public String songDetails(@RequestParam int songId, Model model) {
         // cerco il player con il nome arrivato come parametro
-        Song song = getSongByTitle(songTitle);
-        model.addAttribute("player", player);
-        return "player-details";
+        Song song = getSongById(songId);
+        model.addAttribute("song", song);
+        return "song-details";
     }
 
 
@@ -43,11 +42,10 @@ public class ControllerSong {
         return songs;
     }
 
-    private Song getSongByTitle(String songTitle) {
-        // cerco il player con il nome arrivato come parametro
+    private Song getSongById(int songId) {
         Song song = null;
         for (Song p : getSongs()) {
-            if (p.getTitle().equals(songTitle)) {
+            if (p.getId() == songId ){
                 song = p;
                 break;
             }

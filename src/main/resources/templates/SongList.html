@@ -12,7 +12,8 @@
 <div th:if="${songs.size() > 0}">
     <ul>
         <li th:each="current : ${songs}">
-            <a th:href="@{/song/details(name=${current.name})}" th:text="${current.name}"></a>
+            <span th:text="${current.id}"></span>
+            <!--<a th:href="@{/song/details(name=${current.title})}" th:text="${current.title}"></a>-->
         </li>
     </ul>
 </div>
