@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<h1><span th:text="${songs}"></span></h1>-->
+
+<div th:if="${songs.size() == 0}">There are no songs</div>
+
+<div th:if="${songs.size() > 0}">
+    <ul>
+        <li th:each="current : ${songs}">
+            <a th:href="@{/song/details(name=${current.name})}" th:text="${current.name}"></a>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
